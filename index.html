@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Personal Budget Tracker</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Personal Budget Tracker</h1>
+
+      <!-- Form Section -->
+      <form id="budget-form">
+        <input
+          type="text"
+          id="description"
+          placeholder="Description"
+          required
+        />
+        <input type="number" id="amount" placeholder="Amount" required />
+        <select id="type">
+          <option value="income">Income</option>
+          <option value="expense">Expense</option>
+        </select>
+        <select id="category">
+          <option value="Food">Food</option>
+          <option value="Transport">Transport</option>
+          <option value="Shopping">Shopping</option>
+          <option value="Utilities">Utilities</option>
+          <option value="Others">Others</option>
+        </select>
+        <button type="submit">Add Transaction</button>
+      </form>
+
+      <!-- Display Section -->
+      <div class="totals">
+        <h2>Total Income: Rs. <span id="total-income">0</span></h2>
+        <h2>Total Expenses: Rs. <span id="total-expenses">0</span></h2>
+        <h2>Balance: Rs. <span id="balance">0</span></h2>
+      </div>
+
+      <!-- Transaction List -->
+      <ul id="transaction-list"></ul>
+
+      <!-- Charts Section -->
+      <div class="charts">
+        <canvas id="chart" width="400" height="400"></canvas>
+        <canvas id="category-chart" width="400" height="400"></canvas>
+        <canvas id="trend-chart" width="400" height="400"></canvas>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
